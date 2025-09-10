@@ -103,6 +103,7 @@ EURI_API_KEY = "your-euri-api-key"
 EURI_MODEL = "gpt-4.1-nano"
 ```
 3) Deploy with main module: `app.py`. The app reads the key from secrets or environment.
+4) Note: The UI will not ask for API keys. Keys must be configured on the backend (secrets/env) so shared users can use the app without seeing or entering them.
 
 ## Notes on safety and keys
 - Never commit your API key. Use environment variables or `.env` in local dev only.
