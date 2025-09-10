@@ -7,6 +7,15 @@ from typing import Optional
 import streamlit as st
 from dotenv import load_dotenv
 
+import os
+import sys
+
+# Ensure src/ is on sys.path when running on platforms that do not install the package automatically
+repo_root = Path(__file__).resolve().parent
+src_dir = repo_root / "src"
+if src_dir.exists() and str(src_dir) not in sys.path:
+    sys.path.insert(0, str(src_dir))
+
 from euri_codegen.config import Settings
 from euri_codegen.euri_client import Euri
 from euri_codegen.catalog_loader import load_catalog
