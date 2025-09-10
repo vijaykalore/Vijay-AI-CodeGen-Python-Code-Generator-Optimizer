@@ -1,0 +1,21 @@
+# Environments
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# Outputs
+/generated/
+/.benchmarks/
+
+# Local config
+.env

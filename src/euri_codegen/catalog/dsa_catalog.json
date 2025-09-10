@@ -1,0 +1,111 @@
+[
+  {
+    "id": "binary_search",
+    "title": "Binary Search",
+    "summary": "Find target index in a sorted array using binary search.",
+    "function_signature": "def binary_search(nums: list[int], target: int) -> int:",
+    "inputs": [
+      {"name": "nums", "type": "list[int]", "desc": "Sorted ascending list of integers"},
+      {"name": "target", "type": "int", "desc": "Value to find"}
+    ],
+    "outputs": {"type": "int", "desc": "Index of target or -1 if not found"},
+    "constraints": [
+      "O(log n) time, O(1) space",
+      "Handle empty list",
+      "Avoid integer overflow (use Python mid computation)"
+    ],
+    "examples": [
+      {"input": {"nums": [1,2,3,4,5], "target": 3}, "output": 2},
+      {"input": {"nums": [1,2,3,4,5], "target": 6}, "output": -1}
+    ]
+  },
+  {
+    "id": "two_sum",
+    "title": "Two Sum",
+    "summary": "Find indices of two numbers that add up to target.",
+    "function_signature": "def two_sum(nums: list[int], target: int) -> tuple[int, int] | None:",
+    "inputs": [
+      {"name": "nums", "type": "list[int]", "desc": "List of integers"},
+      {"name": "target", "type": "int", "desc": "Target sum"}
+    ],
+    "outputs": {"type": "tuple[int,int] | None", "desc": "Pair of indices or None"},
+    "constraints": ["O(n) time, O(n) space", "Return first pair found if multiple"],
+    "examples": [
+      {"input": {"nums": [2,7,11,15], "target": 9}, "output": [0,1]},
+      {"input": {"nums": [3,2,4], "target": 6}, "output": [1,2]}
+    ]
+  },
+  {
+    "id": "merge_sort",
+    "title": "Merge Sort",
+    "summary": "Stable sorting algorithm using divide and conquer.",
+    "function_signature": "def merge_sort(nums: list[int]) -> list[int]:",
+    "inputs": [{"name": "nums", "type": "list[int]", "desc": "List of integers"}],
+    "outputs": {"type": "list[int]", "desc": "Sorted list"},
+    "constraints": ["O(n log n) time, O(n) space", "Stable sort"],
+    "examples": [{"input": {"nums": [3,1,2]}, "output": [1,2,3]}]
+  },
+  {
+    "id": "quick_sort",
+    "title": "Quick Sort",
+    "summary": "In-place quicksort implementation.",
+    "function_signature": "def quick_sort(nums: list[int]) -> list[int]:",
+    "inputs": [{"name":"nums","type":"list[int]","desc":"List of integers"}],
+    "outputs": {"type":"list[int]","desc":"Sorted list"},
+    "constraints": ["Average O(n log n), worst O(n^2)", "In-place partitioning"],
+    "examples": [{"input":{"nums":[5,3,8,4,2]},"output":[2,3,4,5,8]}]
+  },
+  {
+    "id": "graph_bfs",
+    "title": "Graph BFS",
+    "summary": "Breadth-first search on an adjacency list graph.",
+    "function_signature": "def bfs(graph: dict[int, list[int]], start: int) -> list[int]:",
+    "inputs": [
+      {"name":"graph","type":"dict[int,list[int]]","desc":"Adjacency list"},
+      {"name":"start","type":"int","desc":"Start node"}
+    ],
+    "outputs": {"type":"list[int]","desc":"Visit order"},
+    "constraints": ["O(V+E)", "Handle disconnected edges gracefully"],
+    "examples": []
+  },
+  {
+    "id": "dijkstra",
+    "title": "Dijkstra Shortest Path",
+    "summary": "Compute shortest paths from a source in weighted graph.",
+    "function_signature": "def dijkstra(n: int, edges: list[tuple[int,int,int]], src: int) -> list[int]:",
+    "inputs": [
+      {"name":"n","type":"int","desc":"Number of nodes 0..n-1"},
+      {"name":"edges","type":"list[tuple[int,int,int]]","desc":"(u,v,w) list w>=0"},
+      {"name":"src","type":"int","desc":"Source node"}
+    ],
+    "outputs": {"type":"list[int]","desc":"Distances, inf as large number"},
+    "constraints": ["Use heap-based O((V+E)logV)", "Non-negative weights"],
+    "examples": []
+  },
+  {
+    "id": "knapsack_01",
+    "title": "0/1 Knapsack",
+    "summary": "Max value within capacity with DP.",
+    "function_signature": "def knapsack_01(weights: list[int], values: list[int], capacity: int) -> int:",
+    "inputs": [
+      {"name":"weights","type":"list[int]","desc":"Item weights"},
+      {"name":"values","type":"list[int]","desc":"Item values"},
+      {"name":"capacity","type":"int","desc":"Max capacity"}
+    ],
+    "outputs": {"type":"int","desc":"Max achievable value"},
+    "constraints": ["O(n*W) DP", "Handle zero weights/values"],
+    "examples": []
+  },
+  {
+    "id": "lru_cache",
+    "title": "LRU Cache",
+    "summary": "Least Recently Used cache with O(1) get/put.",
+    "function_signature": "class LRUCache:",
+    "inputs": [
+      {"name": "capacity", "type": "int", "desc": "Maximum items"}
+    ],
+    "outputs": {"type": "class", "desc": "Implement get(key)->int|-1, put(key:int, value:int)->None"},
+    "constraints": ["get/put in O(1)", "Evict least recently used"],
+    "examples": []
+  }
+]
