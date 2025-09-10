@@ -95,6 +95,15 @@ Features in UI:
 - View and validate the DSA catalog
 - Environment doctor panel
 
+### Deploying to Streamlit Cloud
+1) Push this repo to GitHub (already done).
+2) In Streamlit Cloud, set Secrets with at least:
+```
+EURI_API_KEY = "your-euri-api-key"
+EURI_MODEL = "gpt-4.1-nano"
+```
+3) Deploy with main module: `app.py`. The app reads the key from secrets or environment.
+
 ## Notes on safety and keys
 - Never commit your API key. Use environment variables or `.env` in local dev only.
 - This project will not print your key. It reads from `EURI_API_KEY`.
