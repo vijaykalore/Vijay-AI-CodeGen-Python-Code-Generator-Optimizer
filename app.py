@@ -33,12 +33,16 @@ st.title("Vijay AI CodeGen: Python Code Generator & Optimizer")
 # Sidebar settings
 with st.sidebar:
     st.header("Settings")
+    default_model = "gpt-4.1-nano"
     try:
         settings = Settings.load()
         st.success("EURI_API_KEY found")
-    except Exception as e:
-        st.error(f"Config error: {e}")
-        st.stop()
+    except Exception:
+        st.warning("EURI_API_KEY not found in environment or secrets. Enter it below to proceed.")
+        api_key_input = st.text_input("EURI API Key", type="password")
+        if not api_key_input:
+            st.stop()
+        settings = Settings(api_key=api_key_input, model=default_model)
 
     temp = st.slider("Temperature", min_value=0.0, max_value=1.0, value=settings.temperature, step=0.05)
     max_tokens = st.number_input("Max tokens", min_value=256, max_value=32000, value=settings.max_tokens, step=256)
